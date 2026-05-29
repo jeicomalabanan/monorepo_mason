@@ -6,7 +6,7 @@ analyzer:
     - apps/**/*.g.dart
     - packages/**/*.config.dart
     - packages/**/*.g.dart
-    - toolchain/mason/**/__brick__/**
+    - templates/**/__brick__/**
 
 linter:
   rules:
