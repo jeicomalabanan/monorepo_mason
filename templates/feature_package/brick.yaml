@@ -1,13 +1,12 @@
 name: feature_package
-description: Generate a flutter app package
+description: Generate a flutter feature package.
 version: 1.0.0
 
 environment:
   mason: ^0.1.2
 
 vars:
-  name:
+  feature_name:
     type: string
-    description: Your name
-    default: Dash
-    prompt: What is your name?
+    description: The name of the flutter feature package.
+    prompt: What is the feature name?

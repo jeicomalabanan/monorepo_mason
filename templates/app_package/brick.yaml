@@ -1,5 +1,5 @@
 name: app_package
-description: Generate a flutter app package
+description: Generate a flutter app package.
 version: 1.0.0
 
 environment:
@@ -8,7 +8,8 @@ environment:
 vars:
   app_name:
     type: string
-    description: The name of the Flutter application package.
+    description: The name of the flutter application package.
+    prompt: What is the app name?
   org:
     type: string
     description: The organization identifier used for Android and iOS package naming.

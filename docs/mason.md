@@ -12,3 +12,9 @@ mason new <brick> --output-dir=templates
 
 # 🧱 Use your first brick
 mason make hello
+
+
+```shell
+mason make app_package --output-dir=monorepo_demo/apps --app_name=social_app --org=team.workspace --platforms=android,ios,web
+mason make feature_package --output-dir=monorepo_demo/packages/features --feature_name=core_ui
+```

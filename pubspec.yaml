@@ -11,7 +11,7 @@ dev_dependencies:
 workspace:
   - apps/**
   - packages/**
-  - templates/**/hooks/**
+  - templates/**/hooks/
 
 melos:
   ide:
@@ -38,16 +38,37 @@ melos:
         melos: ^7.8.0
         build_runner: ^2.15.0
         injectable_generator: ^3.0.2
-      hooks:
-        post: |
-          mason get
     clean:
       hooks:
         post: |
-          mason cache clear
+          melos di:clean
+          find . -name 'pubspec.lock' -delete
+          find . -name '*.config.dart' -delete
+          find . -name 'Podfile.lock' -delete
 
   scripts:
     workspace:list:
       description: List all packages included in the workspace.
       run: dart pub workspace list
+
+    di:generate:
+      description: Generate files for dependency injection
+      run: melos exec -c 1 --fail-fast -- "dart run build_runner build -d"
+
+    di:clean:
+      description: Clean generated files of dependency injection
+      run: melos exec -c 1 --fail-fast -- "dart run build_runner clean"
+
+    mason:clean:
+      description: Clears the local Mason cache.
+      run: mason cache clear
+
+    mason:get:
+      description: Downloads and installs all Mason brick dependencies.
+      run: mason get
+
+    build:workspace:
+      steps:
+        - melos clean && melos bs
+        - melos di:generate
 

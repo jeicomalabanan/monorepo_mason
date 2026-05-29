@@ -33,8 +33,6 @@ void run(HookContext context) async {
     exit(result.exitCode);
   }
 
-  context.logger.success('✅ Flutter package created');
-
   final directoriesToDelete = ['$featureDirPath/lib', '$featureDirPath/test'];
   DirectoryUtil.deleteDirectories(context, directoriesToDelete);
 
