@@ -6,6 +6,10 @@ analyzer:
     - apps/**/*.g.dart
     - packages/**/*.config.dart
     - packages/**/*.g.dart
+    - monorepo_demo/apps/**/*.config.dart
+    - monorepo_demo/apps/**/*.g.dart
+    - monorepo_demo/packages/**/*.config.dart
+    - monorepo_demo/packages/**/*.g.dart
     - templates/**/__brick__/**
 
 linter:

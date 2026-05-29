@@ -21,8 +21,7 @@ void run(HookContext context) async {
 
   final result = await Process.run('flutter', [
     'create',
-    '-t',
-    'package',
+    '--template=package',
     featureName,
   ], runInShell: true);
 
