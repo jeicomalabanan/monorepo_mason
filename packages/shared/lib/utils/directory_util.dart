@@ -5,16 +5,14 @@ import 'package:mason/mason.dart';
 final class DirectoryUtil {
   DirectoryUtil._();
 
-  static void deleteDirectories(
-    HookContext context,
-    List<Directory> directories,
-  ) {
-    for (final dir in directories) {
+  static void deleteDirectories(HookContext context, List<String> dirPathList) {
+    for (final dirPath in dirPathList) {
+      final dir = Directory(dirPath);
       if (dir.existsSync()) {
         dir.deleteSync(recursive: true);
-        context.logger.warn('🗑️ Deleted directory: $dir');
+        context.logger.warn('🗑️ Deleted directory: $dirPath');
       } else {
-        context.logger.info('Skipped test directory');
+        context.logger.info('Skipped: $dirPath');
       }
     }
   }

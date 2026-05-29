@@ -9,8 +9,9 @@ dev_dependencies:
   flutter_lints: ^6.0.0
 
 workspace:
+  - apps/**
   - packages/**
-  - templates/**/hooks
+  - templates/**/hooks/**
 
 melos:
   ide:
@@ -22,10 +23,21 @@ melos:
         sdk: ^3.12.0
         flutter: ">=1.17.0"
       dependencies:
+        get_it: ^9.2.1
+        injectable: ^3.0.0
+        bloc: ^9.2.1
+        flutter_bloc: ^9.1.1
+        go_router: ^17.2.3
+        equatable: ^2.0.8
+        meta: ^1.18.2
+        collection: ^1.19.1
+        flutter_smart_dialog: ^5.1.0
         mason: ^0.1.0
       dev_dependencies:
         flutter_lints: ^6.0.0
         melos: ^7.8.0
+        build_runner: ^2.15.0
+        injectable_generator: ^3.0.2
       hooks:
         post: |
           mason get

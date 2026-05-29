@@ -5,15 +5,14 @@ import 'package:mason/mason.dart';
 final class FileUtil {
   FileUtil._();
 
-  static void deleteFiles(HookContext context, List<String> filesToDelete) {
-    for (final path in filesToDelete) {
-      final file = File(path);
-
+  static void deleteFiles(HookContext context, List<String> filePathList) {
+    for (final filePath in filePathList) {
+      final file = File(filePath);
       if (file.existsSync()) {
         file.deleteSync();
-        context.logger.warn('🗑️ Deleted file: $path');
+        context.logger.warn('🗑️ Deleted file: $filePath');
       } else {
-        context.logger.info('Skipped (not found): $path');
+        context.logger.info('Skipped: $filePath');
       }
     }
   }

@@ -6,8 +6,14 @@ environment:
   mason: ^0.1.2
 
 vars:
-  name:
+  app_name:
     type: string
-    description: Your name
-    default: Dash
-    prompt: What is your name?
+    description: The name of the Flutter application package.
+  org:
+    type: string
+    description: The organization identifier used for Android and iOS package naming.
+    default: team.workspace
+  platforms:
+    type: string
+    description: Comma-separated list of target platforms to enable (e.g. android,ios,web).
+    default: android,ios,web
