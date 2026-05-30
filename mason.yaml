@@ -9,3 +9,5 @@ bricks:
     path: templates/feature_screen
   flutter_package:
     path: templates/flutter_package
+  dart_package:
+    path: templates/dart_package

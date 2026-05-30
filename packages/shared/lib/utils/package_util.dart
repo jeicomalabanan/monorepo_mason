@@ -24,4 +24,23 @@ final class PackageUtil {
     ];
     FileUtil.deleteFiles(context, filesToDelete);
   }
+
+  static void cleanDartPackage(HookContext context, String dirPath) {
+    final directoriesToDelete = [
+      '$dirPath/.dart_tool',
+      '$dirPath/example',
+      '$dirPath/lib',
+      '$dirPath/test',
+    ];
+    DirectoryUtil.deleteDirectories(context, directoriesToDelete);
+
+    final filesToDelete = [
+      '$dirPath/analysis_options.yaml',
+      '$dirPath/CHANGELOG.md',
+      '$dirPath/pubspec.lock',
+      '$dirPath/pubspec.yaml',
+      '$dirPath/README.md',
+    ];
+    FileUtil.deleteFiles(context, filesToDelete);
+  }
 }
