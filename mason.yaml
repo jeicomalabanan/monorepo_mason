@@ -7,3 +7,5 @@ bricks:
     path: templates/feature_package
   feature_screen:
     path: templates/feature_screen
+  flutter_package:
+    path: templates/flutter_package
